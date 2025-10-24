@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rasigapriya | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0e021a;
+      color: white;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 15px 80px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar h1 {
+      font-weight: 600;
+      color: #a855f7;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #a855f7;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 100px 80px;
+      background: radial-gradient(circle at top left, #2e004f, #0d0b1a);
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h2 {
+      font-size: 28px;
+      color: #a855f7;
+    }
+
+    .hero-text h1 {
+      font-size: 48px;
+      margin-top: 10px;
+    }
+
+    .hero-text h3 {
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      color: #ddd;
+      font-size: 16px;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .hero-buttons a {
+      background: linear-gradient(90deg, #a855f7, #7e22ce);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .hero-buttons a:hover {
+      box-shadow: 0 0 15px #a855f7;
+    }
+
+    /* ABOUT */
+    #about {
+      padding: 100px 80px;
+      background-color: #1a022e;
+      text-align: center;
+    }
+
+    #about h2 {
+      font-size: 32px;
+      color: #a855f7;
+      margin-bottom: 30px;
+    }
+
+    #about p {
+      max-width: 900px;
+      margin: auto;
+      color: #ddd;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* SKILLS */
+    #skills {
+      background: radial-gradient(circle at top right, #2e004f, #0d0b1a);
+      padding: 100px 80px;
+      text-align: center;
+    }
+
+    #skills h2 {
+      font-size: 32px;
+      color: #a855f7;
+      margin-bottom: 50px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 25px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .skill-card {
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      padding: 30px 20px;
+      border-radius: 15px;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: #a855f7;
+      box-shadow: 0 0 10px #a855f7;
+    }
+
+    /* PROJECTS */
+    #projects {
+      padding: 100px 80px;
+      background-color: #1a022e;
+      text-align: center;
+    }
+
+    #projects h2 {
+      color: #a855f7;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .project-card {
+      width: 320px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #a855f7;
+      box-shadow: 0 0 10px #a855f7;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      padding: 100px 80px;
+      background: radial-gradient(circle at bottom left, #2e004f, #0d0b1a);
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .contact-info h2 {
+      color: #a855f7;
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      margin-bottom: 15px;
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .info-item i {
+      color: #a855f7;
+      margin-right: 10px;
+    }
+
+    .social-icons {
+      margin-top: 25px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 22px;
+      margin-right: 15px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #a855f7;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 280px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid #444;
+      color: white;
+      border-radius: 6px;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #a855f7;
+      box-shadow: 0 0 5px #a855f7;
+    }
+
+    button {
+      background: linear-gradient(90deg, #a855f7, #7e22ce);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      box-shadow: 0 0 15px #a855f7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #0d0b1a;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+      }
+      .contact-section {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h1>PORTFOLIO</h1>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Hello, It's Me</h2>
+      <h1>Rasigapriya Selvaraj</h1>
+      <h3>Aspiring Full Stack Developer</h3>
+      <p>
+        I’m Rasigapriya — a web development enthusiast focusing on <strong>Full Stack and MERN Stack</strong> technologies. I love learning, experimenting, and growing as a developer every day.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/">GitHub</a>
+        <a href="https://linkedin.com/in/rasigapriya">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m pursuing my Bachelor of Engineering in Electronics and Communication Engineering at Sri Shakthi Institute of Engineering and Technology.
+      I’m passionate about exploring IoT, Embedded Systems, and Web Development.
+      I’ve developed IoT-based projects using ESP32-CAM and IR sensors, integrating Telegram for instant alerts.
+      I’m also learning Full Stack Web Development (HTML, CSS, JavaScript, React, Java).
+      My goal is to create impactful tech solutions that are efficient and accessible.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">C</div>
+      <div class="skill-card">Java</div>
+      <div class="skill-card">HTML</div>
+      <div class="skill-card">CSS</div>
+      <div class="skill-card">JavaScript</div>
+      <div class="skill-card">React</div>
+      <div class="skill-card">MATLAB</div>
+      <div class="skill-card">Proteus</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>ESP32-CAM Security System</h3>
+        <p>Detects motion and sends image alerts via Telegram in real-time.</p>
+      </div>
+      <div class="project-card">
+        <h3>Multi-Gas Detection System</h3>
+        <p>Monitors gas levels with visual feedback using IoT and ESP32.</p>
+      </div>
+      <div class="project-card">
+        <h3>Defence Helmet System</h3>
+        <p>Ensures safety by integrating IoT sensors and alert mechanisms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <div class="info-item"><i class="fa-solid fa-envelope"></i> rasigapriya@example.com</div>
+      <div class="info-item"><i class="fa-solid fa-phone"></i> +91 98765 43210</div>
+      <div class="info-item"><i class="fa-solid fa-location-dot"></i> Coimbatore, India</div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send Me a Message</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Rasigapriya Selvaraj. All rights reserved.
+  </footer>
+
+</body>
+</html>
